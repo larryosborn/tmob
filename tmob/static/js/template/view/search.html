@@ -1,0 +1,15 @@
+<div class="navbar navbar-static-top navbar-inverse">
+    <div class="navbar-inner">
+        <form class="navbar-form">
+            <a href="/" id="home-button" class="btn"><i class="icon-home"></i></a>
+            <input id="search-input" type="text" value="{{ this.model.attributes.q }}" placeholder="Search">
+            <select id="search-type">
+                {{#each config.types}}
+                    <option value="{{ this.value }}">{{ this.name }}</option>
+                {{/each}}
+            </select>
+        </form>
+    </div>
+</div>
+<div id="results"></div>
+<button class="more-button btn">More</button>
