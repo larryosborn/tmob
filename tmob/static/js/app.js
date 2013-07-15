@@ -5,6 +5,7 @@ require.config({
         underscore: '/static/js/lib/underscore-min',
         backbone: '/static/js/lib/backbone',
         handlebars: '/static/js/lib/handlebars',
+        'topsy-handlebars': '/static/js/lib/topsy-handlebars',
         moment: '/static/js/lib/moment',
         accounting: '/static/js/lib/accounting'
     },

@@ -1,8 +1,4 @@
-
-.link-result,
-.tweet-result,
-.image-result,
-.video-result {
+.link-result, .tweet-result, .image-result, .video-result {
     padding: 20px 10px;
     border-bottom: 1px solid #EEE;
     overflow: hidden;
@@ -10,4 +6,8 @@
 
 #url {
     background: #EEE;
+}
+
+.domain {
+    color: #693;
 }

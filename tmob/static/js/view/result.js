@@ -1,6 +1,6 @@
 define([
     'backbone',
-    'handlebars',
+    'topsy-handlebars',
     'text!template/result/link.html',
     'text!template/result/tweet.html',
     'text!template/result/image.html',

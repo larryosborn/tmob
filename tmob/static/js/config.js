@@ -2,8 +2,8 @@ define(function(require, exports, module) {
 
     return {
         apikey: 'F2BDD4FAF9D4465C82AD3A7AD270A0F7',
-        //otterBaseUrl: 'http://otter.topsy.com',
-        otterBaseUrl: '/api',
+        otterBaseUrl: 'http://otter.topsy.com',
+        //otterBaseUrl: '/api',
         types: [
             { name: 'Everything', value: 'all' },
             { name: 'Links', value: 'link' },
