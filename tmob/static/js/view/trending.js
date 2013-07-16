@@ -6,7 +6,7 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trending.html', 
 
         tagName: 'div',
         className: 'trending-view',
-        el: this.$('#content'),
+        //el: this.$('#content'),
         template: Handlebars.compile(trending_tpl),
 
         events: {
@@ -18,7 +18,6 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trending.html', 
 
         initialize: function() {
             var view = this;
-            console.warn(view);
             this.render();
             this.fetch();
 
@@ -31,7 +30,6 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trending.html', 
 
         render: function() {
             this.$el.html(this.template({ config: config, model: this.model }));
-            console.warn('running render');
             return this;
         },
 
@@ -67,7 +65,7 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trending.html', 
 
         more: function(evt) {
             this.model.set('page', this.model.get('page') + 1);
-            console.warn(this.model.get('page'));
+            console.warn('trending more: ' + this.model.get('page'));
         }
 
     });

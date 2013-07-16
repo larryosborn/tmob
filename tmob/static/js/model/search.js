@@ -32,6 +32,7 @@ define(['backbone', 'config'], function(Backbone, config) {
                 i.author_url = i.trackback_author_url;
                 i.author_nick = i.trackback_author_nick;
                 i.author_name = i.trackback_author_name;
+                i.author_img = i.topsy_author_img;
             });
             return data;
         }

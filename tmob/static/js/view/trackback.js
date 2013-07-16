@@ -6,7 +6,7 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trackback.html',
 
         tagName: 'div',
         className: 'trackback-view',
-        el: this.$('#content'),
+        //el: this.$('#content'),
         template: Handlebars.compile(trackback_tpl),
 
         events: {
@@ -15,7 +15,6 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trackback.html',
 
         initialize: function() {
             var view = this;
-            console.warn(view);
             this.render();
             this.fetch();
 
@@ -38,12 +37,12 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trackback.html',
 
         url: function(model, response, options) {
             var view = this;
-            console.warn(response.response);
             response.response.target = {
                 mytype: response.response.mytype,
                 title: response.response.title,
                 url: response.response.url
             };
+            model.shim();
             view.$('#url').html(new ResultView({ data: response.response }).el);
         },
 
@@ -57,7 +56,7 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/trackback.html',
 
         more: function(evt) {
             this.model.set('page', this.model.get('page') + 1);
-            console.warn(this.model.get('page'));
+            console.warn('trackback more: ' + this.model.get('page'));
         }
 
     });

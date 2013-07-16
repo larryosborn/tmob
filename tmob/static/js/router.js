@@ -2,6 +2,11 @@ define(['backbone','jquery'], function(Backbone, $) {
 
     console.log('starting router.js');
 
+
+    function context() {
+        return $('#content').unbind().empty();
+    }
+
     var Router = Backbone.Router.extend({
 
         routes: {
@@ -18,14 +23,14 @@ define(['backbone','jquery'], function(Backbone, $) {
 
         home: function() {
             require(['view/home'], function(HomeView) {
-                var view = new HomeView({ id: 'content' });
+                var view = new HomeView({ el: context() });
             });
         },
 
         search: function(query, type) {
             require(['view/search', 'model/search'], function(SearchView, Search) {
                 var search = new Search({ q: query, type: type });
-                var view = new SearchView({ id: 'content', model: search });
+                var view = new SearchView({ model: search, el: context() });
             });
         },
 
@@ -33,7 +38,7 @@ define(['backbone','jquery'], function(Backbone, $) {
             var router = this;
             require(['view/trackback', 'model/trackback'], function(TrackbackView, Trackback) {
                 var trackback = new Trackback({ url: url });
-                var view = new TrackbackView({ id: 'content', router: router, model: trackback });
+                var view = new TrackbackView({ model: trackback, el: context() });
             });
         },
 
@@ -41,7 +46,7 @@ define(['backbone','jquery'], function(Backbone, $) {
             var router = this;
             require(['view/trending', 'model/trending'], function(TrendingView, Trending) {
                 var trending = new Trending({ threshold: threshold, type: type, language: language });
-                var view = new TrendingView({ id: 'content', router: router, model: trending });
+                var view = new TrendingView({ model: trending, el: context() });
             });
         }
 

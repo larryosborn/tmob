@@ -6,7 +6,7 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/search.html', 'v
 
         tagName: 'div',
         className: 'search-view',
-        el: this.$('#content'),
+        //el: this.$('#content'),
         template: Handlebars.compile(search_tpl),
 
         events: {
@@ -35,7 +35,7 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/search.html', 'v
 
         fetch: function() {
             var view = this;
-            view.model.fetch({ dataType: 'jsonp', success: function(model, response, options) { view.results(model, response, options); }, });
+            view.model.fetch({ dataType: 'jsonp', success: function(model, response, options) { view.results(model, response, options); } });
         },
 
         results: function(model, response, options) {
@@ -65,7 +65,7 @@ define(['backbone', 'config', 'handlebars', 'text!template/view/search.html', 'v
 
         more: function(evt) {
             this.model.set('page', this.model.get('page') + 1);
-            console.warn(this.model.get('page'));
+            console.warn('search more: ' + this.model.get('page'));
         }
 
     });

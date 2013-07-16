@@ -46,7 +46,6 @@ define([
         },
 
         trackback: function(evt) {
-            console.warn('trackback-link!');
             evt.preventDefault();
             var $el = $(evt.target);
             var url = $el.data('url');

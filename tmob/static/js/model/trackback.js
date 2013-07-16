@@ -20,7 +20,6 @@ define(['backbone', 'config'], function(Backbone, config) {
         },
 
         shim: function(data) {
-            console.warn(data);
             this.get('response').list.forEach(function(i) {
                 i.target = {
                     url: i.permalink_url,
@@ -30,6 +29,7 @@ define(['backbone', 'config'], function(Backbone, config) {
                 i.author_nick = i.author.nick;
                 i.author_url = i.author.url;
                 i.author_name = i.author.name;
+                i.author_img = i.author.photo_url;
             });
             return data;
         }

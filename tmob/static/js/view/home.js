@@ -6,7 +6,7 @@ define(['backbone', 'handlebars', 'text!template/view/home.html'], function(Back
 
         tagName: 'div',
         className: 'home-view',
-        el: this.$('#content'),
+        //el: this.$('#content'),
         template: Handlebars.compile(home_tpl),
 
         events: {
@@ -33,7 +33,6 @@ define(['backbone', 'handlebars', 'text!template/view/home.html'], function(Back
             evt.preventDefault();
             var query = this.$('#search-input').val();
             Backbone.history.navigate('/search/' + encodeURIComponent(query), { trigger: true });
-            console.warn('search!');
         }
 
     });
