@@ -1,0 +1,14 @@
+<form ng-submit="submit()" class="form" role="form">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-control" name="q" ng-model="searchInput" placeholder="Search">
+            <span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="icon icon-search"></i></button></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <select class="form-control" ng-model="searchType" ng-options="i for i in config.resultTypes" ng-change="submit()"></select>
+    </div>
+    <div class="form-group">
+        <select class="form-control" ng-model="searchWindow" ng-options="i for i in counts.order" ng-show="counts" ng-change="submit()"></select>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" ng-app="Topsy">
+<head>
+    <meta charset="utf-8">
+    <title>Topsy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{% static 'libs/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'libs/bootstrap/css/bootstrap-theme.min.css' %}" rel="stylesheet">
+    <link href="{% static 'libs/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'libs/angular.js' %}"></script>
+    <script src="{% static 'libs/moment.js' %}"></script>
+    <script src="{% static 'libs/accounting.js' %}"></script>
+    <script src="{% static 'js/services/config.js' %}"></script>
+    <script src="{% static 'js/services/api.js' %}"></script>
+    <script src="{% static 'js/controllers/search.js' %}"></script>
+    <script src="{% static 'js/controllers/trackback.js' %}"></script>
+    <script src="{% static 'js/controllers/trending.js' %}"></script>
+    <script src="{% static 'js/directives/search/search.js' %}"></script>
+    <script src="{% static 'js/apps/main.js' %}"></script>
+</head>
+<body>
+<div ng-view></div>
+<script type="text/javascript">
+var config = {
+    base_url: '{% static '' %}',
+    reporting_server: 'http://otter.topsy.com',
+    apikey: 'F2BDD4FAF9D4465C82AD3A7AD270A0F7'
+};
+</script>
+</body>
+</html>
