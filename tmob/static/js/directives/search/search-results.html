@@ -1,4 +1,7 @@
-<span ng-show="counts">Total: {{ counts.windows[searchWindow].total }}</span>
-<div ng-repeat="i in results.list">
-    <div>{{ i.title }}</div>
+<span ng-show="counts">Total: {{ counts.windows[searchWindow].total | number }}</span>
+<div infinite-scroll="addMoreItems()" infinite-scroll-disabled="resultsBusy">
+    <div ng-repeat="content in results.list">
+        <div tweet-content ng-show="content.mytype=='tweet'"></div>
+    </div>
+    <div ng-show='resultsBusy'><i class="icon-spinner icon-spin icon-large"></i></div>
 </div>

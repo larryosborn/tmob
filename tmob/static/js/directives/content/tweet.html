@@ -1,0 +1,16 @@
+<div class="tweet-result">
+    <div class="media">
+        <a class="pull-left" href="{{ content.trackback_author_url }}"><img class="media-object img-rounded" src="{{ content.topsy_author_img }}" width="40" height="40"></a>
+        <div class="media-body">
+            <div><a href="{{ content.trackback_author_url }}">{{ content.trackback_author_name }}</a></div>
+            <div><a href="{{ content.trackback_author_url }}">@{{ content.trackback_author_nick }}</a></div>
+        </div>
+    </div>
+    <div>{{ content.title }}</div>
+    <div>
+        <a href="{{ content.trackback_permalink }}"><i class="icon icon-twitter"></i> {{ content.trackback_date | parseTimestamp | fromNow }}</a>
+        <a href="https://twitter.com/intent/tweet?in_reply_to={{ content.trackback_permalink | tweetId }}"><i class="icon icon-reply"></i></a>
+        <a href="https://twitter.com/intent/retweet?tweet_id={{ content.trackback_permalink | tweetId }}"><i class="icon icon-retweet"></i></a>
+        <a href="https://twitter.com/intent/favorite?tweet_id={{ content.trackback_permalink | tweetId }}"><i class="icon icon-star"></i></a>
+    </div>
+</div>
